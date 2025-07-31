@@ -1,0 +1,1 @@
+Alias: $cbo = https://fhir.ans.gov.br/CodeSystem/tuss-24
