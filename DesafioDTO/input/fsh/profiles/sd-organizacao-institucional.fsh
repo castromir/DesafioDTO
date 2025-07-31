@@ -141,10 +141,10 @@ registrado no Sistema de gestão da informação"
 
 // Extensoes 
 
-//* extension contains
-//    ResponsavelTecnicoExtension named responsavelTecnico 1..1 and
-//    TipoGestaoExtension named tipoGestao 1..1 and
- //   DataCriacaoExtension named dataCriacao 1..1 and
-   // DataAtualizacaoExtension named dataAtualizacao 1..1 and
-    //MotivoAlteracaoExtension named motivoAlteracao 0..1 and
-    //ResponsavelAlteracaoExtension named responsavelAlteracao 1..1
+* extension contains
+    extensao-responsavel-tecnico named responsavelTecnico 1..1 and
+    extensao-tipo-gestao named tipoGestao 0..1 and
+    extensao-data-criacao named dataCriacao 1..1 and
+    extensao-data-atualizacao named dataAtualizacao 1..1 and
+    extensao-motivo-atualizacao named motivoAtualizacao 0..1 and
+    extensao-responsavel-alteracao named responsavelAlteracao 1..1

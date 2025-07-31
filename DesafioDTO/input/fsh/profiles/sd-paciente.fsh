@@ -243,6 +243,7 @@ and email 0..1
     extensao-tipo-sanguineo named tipoSanguineo 0..1 and
     extensao-identidade-genero named identidadeGenero 0..1 and
     extensao-etnia named etnia 0..1 and
+    extensao-raca-cor named racacor 0..1 and
     extensao-religiao named religiao 0..1 and
     extensao-profissao named profissao 0..1 and
     extensao-escolaridade named escolaridade 0..1 and
@@ -262,6 +263,10 @@ and email 0..1
 
 // Etnia
 * extension[etnia] ^short = "Etnia autorreferida do paciente"
+
+// Raça/Cor
+* extension[racacor] ^short = "Raça/Cor autorreferida do paciente"
+
 
 // Religião
 * extension[religiao] ^short = "Crença religiosa informada pelo paciente"

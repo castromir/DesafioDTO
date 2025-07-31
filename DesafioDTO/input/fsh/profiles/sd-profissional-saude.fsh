@@ -180,4 +180,10 @@ registrado no Sistema de gestão da informação"
 * birthDate ^short = "Data de nascimento do profissional
  registrado no Sistema de gestão da informação"
 
- // *extensions: genero, data criacao, data atualizacao, motivo alteracao, responsavel alteracao
+
+* extension contains
+    extensao-identidade-genero named identidadeGenero 0..1 and
+    extensao-data-criacao named dataCriacao 1..1 and
+    extensao-data-atualizacao named dataAtualizacao 1..1 and
+    extensao-motivo-atualizacao named motivoAtualizacao 0..1 and
+    extensao-responsavel-alteracao named responsavelAlteracao 0..1

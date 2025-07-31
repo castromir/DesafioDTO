@@ -1,3 +1,17 @@
+// Responsável Técnico
+Extension: ExtensaoResponsavelTecnico
+Id: extensao-responsavel-tecnico
+Title: "Responsável Técnico"
+Description: "Responsável Técnico"
+* valueString 1..1
+
+// Tipo de Gestão
+Extension: ExtensaoTipoGestao
+Id: extensao-tipo-gestao
+Title: "Tipo de Gestão"
+Description: "Tipo de Gestão que a organização é submetida (Ex.: Pública, Privada, Filantrópica, Autarquia e Outras)"
+* valueCodeableConcept 1..1
+
 // Tipo Sanguíneo
 Extension: ExtensaoTipoSanguineo
 Id: extensao-tipo-sanguineo
@@ -17,6 +31,13 @@ Extension: ExtensaoEtnia
 Id: extensao-etnia
 Title: "Etnia"
 Description: "Etnia autorreferida"
+* valueCodeableConcept 1..1
+
+// Raça/cor
+Extension: ExtensaoRacaCor
+Id: extensao-raca-cor
+Title: "Raca/Cor"
+Description: "Raca/cor autorreferida"
 * valueCodeableConcept 1..1
 
 // Religião
@@ -74,6 +95,20 @@ Id: extensao-data-atualizacao
 Title: "Data de Atualização"
 Description: "Última data de atualização do registro"
 * valueDateTime 1..1
+
+// Motivo de Atualização
+Extension: ExtensaoMotivoAtualizacao
+Id: extensao-motivo-atualizacao
+Title: "Motivo de Atualização"
+Description: "Motivo da última atualização do registro"
+* valueString 1..1
+
+// Motivo de Alteração
+Extension: ExtensaoMotivoAlteracao
+Id: extensao-motivo-alteracao
+Title: "Motivo de Alteração"
+Description: "Motivo da última alteração do registro"
+* valueString 1..1
 
 // Status
 Extension: ExtensaoStatus
