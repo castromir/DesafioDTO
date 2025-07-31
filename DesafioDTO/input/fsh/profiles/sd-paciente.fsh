@@ -239,22 +239,56 @@ and email 0..1
 * telecom[email].value ^short = "Endereço de correio eletrônico do paciente
  registrado no Sistema de gestão da informação"
 
-//* extension contains
-  //  patient-blood-type named tipoSanguineo 0..1 and
-    //gender 
-    //patient-mother-name named nomeMae 1..1 and
-    //patient-father-name named nomePai 0..1 and
-   // patient-race named racaCor 0..1 and
-    //patient-ethnicity named etnia 0..1 and
-   // patient-religion named religiao 0..1 and
-   // patient-profession named profissao 0..1 and
-    //patient-education named escolaridade 0..1 and
-    //patient-nationality named nacionalidade 0..1 and
-   // patient-naturalidade named naturalidade 0..1 and
-    //patient-accommodation named moradia 0..1 and
-    //patient-bank named dadosBancarios 0..1 and
-    //patient-created-date named dataCriacao 1..1 and
-    //patient-updated-date named dataAtualizacao 1..1 and
-    //patient-status named statusPaciente 0..1 and
-    //patient-blocked named pacienteBloqueado 0..1 and
-    //patient-related-person named responsavelLegal 0..1
+* extension contains
+    extensao-tipo-sanguineo named tipoSanguineo 0..1 and
+    extensao-identidade-genero named identidadeGenero 0..1 and
+    extensao-etnia named etnia 0..1 and
+    extensao-religiao named religiao 0..1 and
+    extensao-profissao named profissao 0..1 and
+    extensao-escolaridade named escolaridade 0..1 and
+    extensao-nacionalidade named nacionalidade 0..1 and
+    extensao-naturalidade named naturalidade 0..1 and
+    extensao-dados-bancarios named dadosBancarios 0..1 and
+    extensao-data-criacao named dataCriacao 1..1 and
+    extensao-data-atualizacao named dataAtualizacao 1..1 and
+    extensao-status named statusPaciente 0..1 and
+    extensao-bloqueado named pacienteBloqueado 0..1
+
+// Tipo Sanguíneo
+* extension[tipoSanguineo] ^short = "Grupo e fator Rh do paciente"
+
+// Identidade de Gênero
+* extension[identidadeGenero] ^short = "Identidade de gênero declarada do paciente"
+
+// Etnia
+* extension[etnia] ^short = "Etnia autorreferida do paciente"
+
+// Religião
+* extension[religiao] ^short = "Crença religiosa informada pelo paciente"
+
+// Profissão
+* extension[profissao] ^short = "Profissão ou ocupação exercida pelo paciente"
+
+// Escolaridade
+* extension[escolaridade] ^short = "Nível de escolaridade alcançado pelo paciente"
+
+// Nacionalidade
+* extension[nacionalidade] ^short = "País de nacionalidade do paciente"
+
+// Naturalidade
+* extension[naturalidade] ^short = "Cidade e estado onde o paciente nasceu"
+
+// Dados Bancários
+* extension[dadosBancarios] ^short = "Informações bancárias do paciente para eventuais reembolsos ou pagamentos"
+
+// Data de Criação
+* extension[dataCriacao] ^short = "Data de criação do cadastro do paciente no sistema"
+
+// Data de Atualização
+* extension[dataAtualizacao] ^short = "Última data em que os dados do paciente foram atualizados"
+
+// Status do Paciente
+* extension[statusPaciente] ^short = "Situação atual do paciente no sistema (ativo, inativo, falecido, etc.)"
+
+// Paciente Bloqueado
+* extension[pacienteBloqueado] ^short = "Indica se o paciente está impedido de receber atendimentos no sistema"
