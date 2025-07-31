@@ -126,7 +126,7 @@ and ocupacao 1..1
 * qualification[ocupacao].code.coding.code ^short = "Nº do código da Ocupação do profissional
  registrado no Sistema de gestão da informação"
 
- // Meio de contato
+// Meio de contato
 
 * telecom 0..7
 * telecom ^slicing.discriminator.type = #pattern
