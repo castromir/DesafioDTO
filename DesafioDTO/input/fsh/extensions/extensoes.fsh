@@ -110,6 +110,13 @@ Title: "Motivo de Alteração"
 Description: "Motivo da última alteração do registro"
 * valueString 1..1
 
+// Responsável pela Alteração
+Extension: ExtensaoResponsavelAlteracao
+Id: extensao-responsavel-alteracao
+Title: "Responsável pela Alteração"
+Description: "Indica quem foi o responsável pela última alteração no registro"
+* valueString 1..1
+
 // Status
 Extension: ExtensaoStatus
 Id: extensao-status

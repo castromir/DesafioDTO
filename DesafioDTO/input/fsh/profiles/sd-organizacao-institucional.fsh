@@ -148,3 +148,21 @@ registrado no Sistema de gestão da informação"
     extensao-data-atualizacao named dataAtualizacao 1..1 and
     extensao-motivo-atualizacao named motivoAtualizacao 0..1 and
     extensao-responsavel-alteracao named responsavelAlteracao 1..1
+
+// Responsável Técnico
+* extension[responsavelTecnico] ^short = "Profissional responsável técnico pela organização"
+
+// Tipo de Gestão
+* extension[tipoGestao] ^short = "Tipo de gestão da organização (pública, privada, etc.)"
+
+// Data de Criação
+* extension[dataCriacao] ^short = "Data de criação do registro da organização"
+
+// Data de Atualização
+* extension[dataAtualizacao] ^short = "Data da última atualização do registro da organização"
+
+// Motivo de Atualização
+* extension[motivoAtualizacao] ^short = "Motivo da última atualização do registro da organização"
+
+// Responsável pela Alteração
+* extension[responsavelAlteracao] ^short = "Pessoa ou sistema que realizou a última alteração no registro"

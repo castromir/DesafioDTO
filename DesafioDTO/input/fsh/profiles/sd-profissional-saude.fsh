@@ -187,3 +187,18 @@ registrado no Sistema de gestão da informação"
     extensao-data-atualizacao named dataAtualizacao 1..1 and
     extensao-motivo-atualizacao named motivoAtualizacao 0..1 and
     extensao-responsavel-alteracao named responsavelAlteracao 0..1
+
+// Identidade de Gênero
+* extension[identidadeGenero] ^short = "Identidade de gênero declarada"
+
+// Data de Criação
+* extension[dataCriacao] ^short = "Data de criação do registro"
+
+// Data de Atualização
+* extension[dataAtualizacao] ^short = "Última data de atualização do registro"
+
+// Motivo de Atualização
+* extension[motivoAtualizacao] ^short = "Motivo da última atualização do registro"
+
+// Responsável pela Alteração
+* extension[responsavelAlteracao] ^short = "Pessoa ou sistema responsável pela última alteração!"
