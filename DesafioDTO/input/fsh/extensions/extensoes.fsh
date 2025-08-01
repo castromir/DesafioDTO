@@ -89,12 +89,24 @@ Title: "Data de Criação"
 Description: "Data de criação do registro"
 * valueDateTime 1..1
 
+// Hora de Criação/Registro
+Extension: ExtensaoHoraCriacao
+Id: extensao-hora-criacao
+Title: "Hora da Criação"
+* valueTime 1..1
+
 // Data de Atualização
 Extension: ExtensaoDataAtualizacao
 Id: extensao-data-atualizacao
 Title: "Data de Atualização"
 Description: "Última data de atualização do registro"
 * valueDateTime 1..1
+
+// Hora de Atualização/Alteração
+Extension: ExtensaoHoraAtualizacao
+Id: extensao-hora-atualizacao
+Title: "Hora da Atualização"
+* valueTime 1..1
 
 // Motivo de Atualização
 Extension: ExtensaoMotivoAtualizacao
