@@ -97,7 +97,7 @@ and ocupacao 1..1
 * qualification[conselho].code.text ^short = "Nome do Conselho de Classe (CRM, COREN, CRN, Outros) do profissional
  registrado no Sistema de gestão da informação"
 * qualification[conselho].issuer 1..1
-* qualification[conselho].issuer only Reference(OrganizacaoInstitucional)
+* qualification[conselho].issuer only Reference(Organizacao)
 * qualification[conselho].issuer ^short = "Organização Institucional registrada ao conselho do profissional
  registrado no Sistema de gestão da informação"
 

@@ -4,3 +4,5 @@ Alias: $vsEstadoCivil = http://hl7.org/fhir/ValueSet/marital-status
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $csMedicationType = http://desafiodto.org/CodeSystem/cs-medication-type
 Alias: $vsMedicationType = http://desafiodto.org/ValueSet/vs-medication-type
+Alias: $csModalidadeAtendimento = http://desafiodto.org/CodeSystem/cs-modalidade-atendimento
+Alias: $vsModalidadeAtendimento = http://desafiodto.org/ValueSet/vs-modalidade-atendimento

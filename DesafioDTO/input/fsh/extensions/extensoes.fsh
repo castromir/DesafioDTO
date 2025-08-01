@@ -142,3 +142,103 @@ Id: extensao-bloqueado
 Title: "Registro Bloqueado"
 Description: "Indica se o registro está bloqueado para uso"
 * valueBoolean 1..1
+
+// --- Atendimento ---
+
+// Programa de Saúde
+Extension: ExtensaoProgramaSaude
+Id: extensao-programa-saude
+Title: "Programa de Saúde"
+Description: "Programa de saúde institucional ao qual o atendimento está vinculado"
+* valueCodeableConcept 1..1
+
+// Data Entrada Instituição
+Extension: ExtensaoDataEntradaInstituicao
+Id: extensao-data-entrada-instituicao
+Title: "Data Entrada Instituição"
+Description: "Data em que o paciente retirou senha para atendimento"
+* valueDate 1..1
+
+// Hora Entrada Instituição
+Extension: ExtensaoHoraEntradaInstituicao
+Id: extensao-hora-entrada-instituicao
+Title: "Hora Entrada Instituição"
+Description: "Hora em que o paciente retirou senha para atendimento"
+* valueTime 1..1
+
+// Data Entrada Atendimento Administrativo
+Extension: ExtensaoDataEntradaAtendimento
+Id: extensao-data-entrada-atendimento
+Title: "Data Entrada Atendimento Administrativo"
+Description: "Data de abertura de ficha no atendimento"
+* valueDate 1..1
+
+// Hora Entrada Atendimento Administrativo
+Extension: ExtensaoHoraEntradaAtendimento
+Id: extensao-hora-entrada-atendimento
+Title: "Hora Entrada Atendimento Administrativo"
+Description: "Hora de abertura de ficha no atendimento"
+* valueTime 1..1
+
+// Data da Triagem
+Extension: ExtensaoDataTriagem
+Id: extensao-data-triagem
+Title: "Data da Triagem"
+Description: "Data da triagem/acolhimento do paciente"
+* valueDate 1..1
+
+// Hora da Triagem
+Extension: ExtensaoHoraTriagem
+Id: extensao-hora-triagem
+Title: "Hora da Triagem"
+Description: "Hora da triagem/acolhimento do paciente"
+* valueTime 1..1
+
+// Data do Atendimento Médico
+Extension: ExtensaoDataAtendMedico
+Id: extensao-data-atend-medico
+Title: "Data do Atendimento Médico"
+Description: "Data do atendimento realizado pelo profissional de saúde"
+* valueDate 1..1
+
+// Hora do Atendimento Médico
+Extension: ExtensaoHoraAtendMedico
+Id: extensao-hora-atend-medico
+Title: "Hora do Atendimento Médico"
+Description: "Hora do atendimento realizado pelo profissional de saúde"
+* valueTime 1..1
+
+// Data de Alta Médica
+Extension: ExtensaoDataAltaMedica
+Id: extensao-data-alta-medica
+Title: "Data de Alta Médica"
+Description: "Data da alta médica informada pelo profissional"
+* valueDate 1..1
+
+// Hora de Alta Médica
+Extension: ExtensaoHoraAltaMedica
+Id: extensao-hora-alta-medica
+Title: "Hora de Alta Médica"
+Description: "Hora da alta médica informada pelo profissional"
+* valueTime 1..1
+
+// Desfecho Clínico
+Extension: ExtensaoDesfechoClinico
+Id: extensao-desfecho-clinico
+Title: "Desfecho Clínico"
+Description: "Descrição do desfecho clínico ou título de alta do paciente"
+* valueString 1..1
+
+// Tipo de Acidente
+Extension: ExtensaoTipoAcidente
+Id: extensao-tipo-acidente
+Title: "Tipo de Acidente"
+Description: "Tipo de acidente relacionado ao atendimento"
+* valueCodeableConcept 1..1
+
+// Caráter da Solicitação
+Extension: ExtensaoCaraterSolicitacao
+Id: extensao-carater-solicitacao
+Title: "Caráter da Solicitação"
+Description: "Caráter do atendimento (eletivo, urgência, emergência)"
+* valueString 1..1

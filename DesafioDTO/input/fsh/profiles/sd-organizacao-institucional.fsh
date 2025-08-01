@@ -1,7 +1,7 @@
-Profile: OrganizacaoInstitucional
+Profile: Organizacao
 Parent: Organization
-Id: organizacao-institucional
-Title: "Organização Institucional"
+Id: organizacao
+Title: "Organização"
 Description: "Perfil para representar uma Organização de acordo com os padrões institucionais da DT."
 
 * name 1..1

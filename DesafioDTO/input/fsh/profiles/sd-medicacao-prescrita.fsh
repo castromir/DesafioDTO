@@ -35,8 +35,8 @@ Description: "Perfil para representar uma prescrição de medicamento."
 * category.coding.system 1..1
 * category.coding.system = $csMedicationType
 * category.coding.code 1..1
-* category.coding.code from $vsMedicationType
-* category.text ^short = "Categoria da medicação (Prescrição, Receita, Uso Contínuo, etc.)"
+* category.coding.code from $vsMedicationType (required)
+* category.text ^short = "prescrição | receita | uso contínuo +"
 
 // Status da Medicação
 * status 1..1
