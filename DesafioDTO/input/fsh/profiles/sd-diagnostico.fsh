@@ -12,7 +12,7 @@ Description: "Perfil que representa os dados de diagnóstico clínico registrado
 * code.coding.system 0..1
 * code.coding.system ^short = "Sistema de codificação utilizado"
 * code.coding.code 0..1
-* code.coding.system ^short = "CID-10 | NANDA | CIAP12 +"
+* code.coding.code ^short = "CID-10 | NANDA | CIAP12 +"
 
 // Código do Atendimento
 * encounter 1..1
