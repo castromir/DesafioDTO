@@ -40,13 +40,13 @@ Description: "Perfil para representar uma prescrição de medicamento."
 
 // Status da Medicação
 * status 1..1
-* status ^short = "Situação do medicamento (ativo, cancelado, etc.)"
+* status ^short = "ativo | cancelado | suspenso | outro"
 
 // Via de Administração
 * dosageInstruction.route 0..1
 * dosageInstruction.route.coding.system 1..1
 * dosageInstruction.route.coding.code 1..1
-* dosageInstruction.route.text ^short = "Via de administração do medicamento"
+* dosageInstruction.route.text ^short = "oral | venosa | sonda | nasal | retal +"
 
 // Frequência da Medicação
 * dosageInstruction.timing.repeat.frequency 0..1

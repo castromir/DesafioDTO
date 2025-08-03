@@ -27,7 +27,6 @@ and ans 1..1
 // Slice Código da Empresa
 
 * identifier[codigo] ^short = "Identificação pelo Código da Empresa"
-//* identifier[codigo].system = $codigoEmpresa // TODO 
 * identifier[codigo].system ^short = "O identificador da organização registrado no Sistema de gestão da informação"
 * identifier[codigo].system 1..1
 * identifier[codigo].value 1..1
@@ -36,7 +35,6 @@ and ans 1..1
 // Slice CNPJ
 
 * identifier[cnpj] ^short = "Identificação pelo Cadastro Nacional de Pessoa Jurídica (CNPJ)"
-//* identifier[cnpj].system = $cnpj
 * identifier[cnpj].system ^short = "Cadastro Nacional de Pessoa Jurídica da organização registrado no Sistema de gestão da informação"
 * identifier[cnpj].system 1..1
 * identifier[cnpj].value 1..1
@@ -45,7 +43,6 @@ and ans 1..1
 // Slice CNES
 
 * identifier[cnes] ^short = "Identificação pelo Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
-//* identifier[cnes].system = $cnes
 * identifier[cnes].system ^short = "Identifica o estabelecimento junto ao Ministério da Saúde e órgãos competentes"
 * identifier[cnes].system 1..1
 * identifier[cnes].value 1..1
@@ -54,7 +51,6 @@ and ans 1..1
 // Slice Registro ANS
 
 * identifier[ans] ^short = "Identificação pelo Registro na Agência Nacional de Saúde (ANS)"
-//* identifier[ans].system = $ans
 * identifier[ans].system ^short = "Autorização concedida pela Agência Nacional de Saúde Suplementar (ANS)
  a uma operadora de planos de saúde."
 * identifier[ans].system 1..1
@@ -65,11 +61,9 @@ and ans 1..1
 * type ^short = "Regime jurídico que define como uma empresa deve funcionar e
  ser reconhecida legalmente. É também conhecida como tipo societário."
 * type.coding.system 1..1
-//* type.coding.system = $csNaturezaJuridica //TODO
 * type.coding.system ^short = "Identidade do sistema de terminologia"
 * type.coding.code 1..1
-//* type.coding.code from $vsNaturezaJuridica (required) //TODO
-* type.coding.code ^short = "Código relativo ao sistema de codificação"
+* type.coding.code ^short = "empresa | associação | fundação | órgão público +"
 
 // Endereço
 

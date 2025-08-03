@@ -20,4 +20,4 @@ Description: "Perfil FHIR do recurso RelatedPerson para representar um parente o
 * relationship.coding.system 1..1
 * relationship.coding.system ^short = "Tipo do Código de parentesco/relação com o paciente"
 * relationship.coding.code 1..1
-* relationship.coding.code ^short = "Código de parentesco/relação com o paciente"
+* relationship.coding.code ^short = "mãe | pai | irmão | cuidador +"
