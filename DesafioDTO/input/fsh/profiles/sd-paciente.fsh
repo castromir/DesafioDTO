@@ -267,7 +267,6 @@ and email 0..1
 // Raça/Cor
 * extension[racacor] ^short = "Raça/Cor autorreferida do paciente"
 
-
 // Religião
 * extension[religiao] ^short = "Crença religiosa informada pelo paciente"
 

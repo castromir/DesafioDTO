@@ -24,7 +24,9 @@ Extension: ExtensaoIdentidadeGenero
 Id: extensao-identidade-genero
 Title: "Identidade de Gênero"
 Description: "Identidade de gênero declarada"
-* valueCodeableConcept 1..1
+* value[x] 1..1
+* value[x] only code
+* valueCode from $vsIdentidadeGenero
 
 // Etnia
 Extension: ExtensaoEtnia

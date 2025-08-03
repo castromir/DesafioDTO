@@ -6,3 +6,5 @@ Alias: $csMedicationType = http://desafiodto.org/CodeSystem/cs-medication-type
 Alias: $vsMedicationType = http://desafiodto.org/ValueSet/vs-medication-type
 Alias: $csModalidadeAtendimento = http://desafiodto.org/CodeSystem/cs-modalidade-atendimento
 Alias: $vsModalidadeAtendimento = http://desafiodto.org/ValueSet/vs-modalidade-atendimento
+Alias: $csIdentidadeGenero = http://desafiodto.org/CodeSystem/cs-identidade-genero
+Alias: $vsIdentidadeGenero = http://desafiodto.org/ValueSet/vs-identidade-genero
