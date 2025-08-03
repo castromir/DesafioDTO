@@ -73,4 +73,4 @@ Description: "Perfil baseado em ServiceRequest que representa a requisição de 
 * extension[motivoAtualizacao] ^short = "Motivo da última atualização do registro"
 
 // Responsável pela Alteração
-* extension[responsavelAlteracao] ^short = "Pessoa ou sistema responsável pela última alteração!"
+* extension[responsavelAlteracao] ^short = "Pessoa ou sistema responsável pela última alteração"
