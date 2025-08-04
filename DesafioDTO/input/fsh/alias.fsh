@@ -1,5 +1,5 @@
 Alias: $cbo = https://fhir.ans.gov.br/CodeSystem/tuss-24
-Alias: $csEstadoCivil = https://hl7.org/fhir/R4/v3/MaritalStatus/cs.html
+Alias: $csEstadoCivil = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 Alias: $vsEstadoCivil = http://hl7.org/fhir/ValueSet/marital-status
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $csMedicationType = http://desafiodto.org/CodeSystem/cs-medication-type
@@ -9,4 +9,4 @@ Alias: $vsModalidadeAtendimento = http://desafiodto.org/ValueSet/vs-modalidade-a
 Alias: $csIdentidadeGenero = http://desafiodto.org/CodeSystem/cs-identidade-genero
 Alias: $vsIdentidadeGenero = http://desafiodto.org/ValueSet/vs-identidade-genero
 Alias: $csLoinc = http://loinc.org
-Alias: $csMedicationRequestIntent = https://hl7.org/fhir/R4/codesystem-medicationrequest-intent.html 
+Alias: $csMedicationRequestIntent = https://hl7.org/fhir/R4/codesystem-medicationrequest-intent
