@@ -8,3 +8,5 @@ Alias: $csModalidadeAtendimento = http://desafiodto.org/CodeSystem/cs-modalidade
 Alias: $vsModalidadeAtendimento = http://desafiodto.org/ValueSet/vs-modalidade-atendimento
 Alias: $csIdentidadeGenero = http://desafiodto.org/CodeSystem/cs-identidade-genero
 Alias: $vsIdentidadeGenero = http://desafiodto.org/ValueSet/vs-identidade-genero
+Alias: $csLoinc = http://loinc.org
+Alias: $csMedicationRequestIntent = https://hl7.org/fhir/R4/codesystem-medicationrequest-intent.html 

@@ -15,6 +15,8 @@ Description: "Perfil para representar uma prescrição de medicamento."
 * subject only Reference(Paciente)
 * subject ^short = "Paciente para uso da medicação"
 
+* intent 1..1
+
 // Codigo do atendimento
 * encounter 1..1
 * encounter only Reference(Encounter)
@@ -28,7 +30,6 @@ Description: "Perfil para representar uma prescrição de medicamento."
 * medicationCodeableConcept 1..1
 * medicationCodeableConcept.text 1..1
 * medicationCodeableConcept.text ^short = "Descrição do medicamento prescrito"
-* medicationReference only Reference(Medication)
 
 // Categoria da Medicação
 * category 0..1

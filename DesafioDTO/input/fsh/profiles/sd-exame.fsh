@@ -4,6 +4,10 @@ Id: resultado-exame-observation
 Title: "Resultado de Exame"
 Description: "Perfil baseado em Observation que representa os resultados de exames no Sistema de Registro Eletrônico de Saúde, conforme padrão DTO."
 
+* code 1..1
+* code.coding.system = $csLoinc
+* code.coding.code 1..1
+
 // Código, Tipo e Descrição do Exame
 // Grande parte das informações para o Exame, como categoria, notas e outras, estão já no ServiceRequest
 * basedOn 1..1
