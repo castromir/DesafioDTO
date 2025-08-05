@@ -74,7 +74,7 @@ Após a geração, abra o arquivo:
 ig-perfis/output/index.html
 ```
 
-## 📋 Conteúdo do IG
+## Conteúdo do IG
 
 O Guia de Implementação inclui:
 
@@ -107,7 +107,7 @@ O Guia de Implementação inclui:
   - `vs-medication-type.fsh` - Valores para Tipos de Medicação
   - `vs-modalidade-atendimento.fsh` - Valores para Modalidades de Atendimento
 
-## 🔧 Configurações Técnicas
+## Configurações Técnicas
 
 ### Servidor HAPI FHIR
 - **Versão**: R4
@@ -120,7 +120,7 @@ O Guia de Implementação inclui:
 - **Formato**: HTML gerado automaticamente
 - **Localização**: `ig-perfis/output/`
 
-## 📊 Dados de Exemplo
+## Dados de Exemplo
 
 O projeto inclui instâncias de exemplo para todos os recursos:
 
@@ -133,14 +133,14 @@ O projeto inclui instâncias de exemplo para todos os recursos:
 - **Exames**: 
 - **Observações**: 
 
-## 🔍 Como Testar
+## Como Testar
 
 1. **Verificar servidor**: Acesse http://localhost:8080
 2. **Consultar recursos**: Use a interface REST do HAPI FHIR
 3. **Visualizar IG**: Abra `ig-perfis/output/index.html`
 4. **Testar aplicação**: Execute a aplicação frontend (se disponível)
 
-## 📝 Notas Importantes
+## Notas Importantes
 
 - Todo o repositório é baseado no levantamento de dados da empresa DTO
 - Todos os perfis seguem as especificações HL7 FHIR R4
@@ -148,6 +148,6 @@ O projeto inclui instâncias de exemplo para todos os recursos:
 - Os exemplos incluem dados fictícios para demonstração
 - O IG é gerado automaticamente a partir dos arquivos .fsh
 
-## 🤝 Contribuição
+## Contribuição
 
 Este é um projeto de demonstração para exercício prático de FHIR. Para dúvidas ou melhorias, consulte a documentação do HL7 FHIR e HAPI FHIR.
