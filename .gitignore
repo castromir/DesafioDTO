@@ -1,0 +1,40 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Arquivos de build
+build/
+target/
+node_modules/
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de configuração local
+.env
+.env.local
+
+# Arquivos de output do IG (serão gerados localmente)
+ig-perfis/output/
+
+# Outros diretórios que não queremos versionar por enquanto
+hapi-fhir-jpaserver-starter/
+fhir-examples/
+web-app/
+hapi-server/
+implementation-guide/
+input/
+
+# Arquivos de backup
+*.bak
+*.backup 
