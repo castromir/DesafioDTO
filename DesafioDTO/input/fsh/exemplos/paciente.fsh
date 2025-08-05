@@ -10,7 +10,6 @@ Description: "Exemplo de instância do perfil Paciente representando João da Si
 * name[usual].text = "Joãozinho"
 
 // Identificadores
-* identifier[codigo].system = "http://desafiodto.org/identificador/codigo"
 * identifier[codigo].value = "PAC12345"
 * identifier[prontuario].value = "PRONT98765"
 * identifier[cpf].value = "123.456.789-00"
@@ -30,7 +29,7 @@ Description: "Exemplo de instância do perfil Paciente representando João da Si
 
 // Vínculos familiares
 * link[mae].id = "mae"
-* link[mae].other = Reference(ParenteExemplo)
+* link[mae].other = Reference(PacienteExemplo)
 * link[mae].type = #refer
 
 // Endereço
@@ -46,29 +45,11 @@ Description: "Exemplo de instância do perfil Paciente representando João da Si
 * address.postalCode = "01234-567"
 
 // Estado civil
-* maritalStatus.coding.code = #casado
-
-// Meios de contato
-* telecom[telefoneresidencialDDD].value = "11"
-* telecom[telefoneresidencial].value = "3222-4455"
-* telecom[telefonecelularDDD].value = "11"
-* telecom[telefonecelular].value = "99988-7766"
-* telecom[telefonecontatoDDD].value = "11"
-* telecom[telefonecontato].value = "98877-6655"
-* telecom[email].value = "joao.silva@email.com"
+* maritalStatus.coding.code = #M
 
 // Extensões
-* extension[tipoSanguineo].valueCodeableConcept.text = "O+"
 * extension[identidadeGenero].valueCode = #200
-* extension[etnia].valueCodeableConcept.text = "Pardo"
-* extension[racacor].valueCodeableConcept.text = "Parda"
-* extension[religiao].valueCodeableConcept.text = "Católico"
-* extension[profissao].valueCodeableConcept.text = "Eletricista"
-* extension[escolaridade].valueCodeableConcept.text = "Ensino médio completo"
-* extension[nacionalidade].valueCodeableConcept.text = "Brasileiro"
-* extension[naturalidade].valueCodeableConcept.text = "Belo Horizonte - MG"
-* extension[dadosBancarios].valueString = "Banco XYZ - Agência 1234 - Conta Corrente 56789-0"
-* extension[dataCriacao].valueDate = "2025-08-01"
-* extension[dataAtualizacao].valueDate = "2025-08-03"
-* extension[statusPaciente].valueCode = #ativo
+* extension[dataCriacao].valueDateTime = "2025-08-01"
+* extension[dataAtualizacao].valueDateTime = "2025-08-03"
+* extension[statusPaciente].valueCodeableConcept = #ativo
 * extension[pacienteBloqueado].valueBoolean = false

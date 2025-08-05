@@ -26,8 +26,8 @@ Description: "Perfil FHIR do recurso Patient para representar pacientes conforme
 * name[usual].text ^short = "Representação de texto do nome completo do paciente"
 
 * identifier 3..12
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "type.coding.code"
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #closed
 
 * identifier contains codigo 1..1 
@@ -45,11 +45,13 @@ and dnv 0..1
 
 // Slice Código do Paciente
 * identifier[codigo].system 1..1
+* identifier[codigo].system = "http://desafiodto.org/CodeSystem/cs-codigo-paciente"
 * identifier[codigo].system ^short = "Tipo de Código do paciente registrado no Sistema de gestão da informação"
 * identifier[codigo].value 1..1
 * identifier[codigo].value ^short = "Código do paciente registrado no Sistema de gestão da informação"
 
 // Slice Prontuário
+* identifier[prontuario].system = "http://desafiodto.org/CodeSystem/cs-codigo-prontuario"
 * identifier[prontuario].value 1..1
 * identifier[prontuario].value ^short = "Número do prontuário do paciente registrado no Sistema de gestão da informação"
 * identifier[prontuario].value ^definition = """Numero de controle assistência da organização de saúde,
@@ -57,16 +59,19 @@ and dnv 0..1
  desde o histórico clínico até os tratamentos realizados."""
 
 // Slice CPF
+* identifier[cpf].system = "http://desafiodto.org/CodeSystem/cs-cpf"
 * identifier[cpf].value 1..1
 * identifier[cpf].value ^short = "Sigla para Cadastro de Pessoa Física.
  Trata-se de uma forma de registro obrigatória a todos os brasileiros"
 
 // Slice RG
+* identifier[rg].system = "http://desafiodto.org/CodeSystem/cs-rg"
 * identifier[rg].value 1..1
 * identifier[rg].value ^short = "RG, ou Registro Geral, é um documento de identificação pessoal e intransferível,
  utilizado no Brasil para comprovar a identidade dos cidadãos"
 
 // Slice CNH
+* identifier[cnh].system = "http://desafiodto.org/CodeSystem/cs-cnh"
 * identifier[cnh].value 1..1
 * identifier[cnh].value ^short = "Número da CNH do paciente registrado no Sistema de gestão da informação"
 * identifier[cnh].value ^definition = """A Carteira Nacional de Habilitação (CNH),
@@ -75,32 +80,39 @@ and dnv 0..1
  atesta a aptidão de um cidadão para conduzir veículos automotores terrestres."""
 
 // Slice CNS
+* identifier[cns].system = "http://desafiodto.org/CodeSystem/cs-cns"
 * identifier[cns].value 1..1
 * identifier[cns].value ^short = "O CNS (Cartão Nacional de Saúde) é um número Sistema Único de Saúde (SUS) para registro."
 
 // Slice CIN
+* identifier[cin].system = "http://desafiodto.org/CodeSystem/cs-cin"
 * identifier[cin].value 1..1
 * identifier[cin].value ^short = "Carteira Nacional que identifica de forma única e segura qualquer individuo de nacionalidade brasileira"
 
 // Slice RNE
+* identifier[rne].system = "http://desafiodto.org/CodeSystem/cs-rne"
 * identifier[rne].value 1..1
 * identifier[rne].value ^short = "Número do RNE do paciente registrado no Sistema de gestão da informação"
 
 // Slice CRNM
+* identifier[crnm].system = "http://desafiodto.org/CodeSystem/cs-crnm"
 * identifier[crnm].value 1..1
 * identifier[crnm].value ^short = "Número único e alfanumérico atribuído a cada imigrante.
  Ele é gerado a partir das impressões digitais e dos dados pessoais do imigrante"
 
 // Slice Passaporte
+* identifier[passaporte].system = "http://desafiodto.org/CodeSystem/cs-passaporte"
 * identifier[passaporte].value 1..1
 * identifier[passaporte].value ^short = "Documento de viagem que identifica o portador como nacional de um país
  e permite que ele entre em outros países."
 
 // Slice Certidão de Nascimento
+* identifier[certidaonascimento].system = "http://desafiodto.org/CodeSystem/cs-certidao-nascimento"
 * identifier[certidaonascimento].value 1..1
 * identifier[certidaonascimento].value ^short = "Documento oficial que comprova o registro civil de nascimento de uma pessoa."
 
 // Slice DNV
+* identifier[dnv].system = "http://desafiodto.org/CodeSystem/cs-dnv"
 * identifier[dnv].value 1..1
 * identifier[dnv].value ^short = "Documento que registra o nascimento de uma criança."
 
@@ -111,7 +123,7 @@ and dnv 0..1
 * birthDate ^short = "Data de Nascimento registrado oficialmente para o paciente."
 
 * link 1..3
-* link ^slicing.discriminator.type = #type
+* link ^slicing.discriminator.type = #value
 * link ^slicing.discriminator.path = "id"
 * link ^slicing.rules = #closed
 
@@ -124,7 +136,7 @@ and responsavel 0..1
 * link[mae].id 1..1
 * link[mae].id = "mae"
 * link[mae].other 1..1
-* link[mae].other only Reference(Parente)
+* link[mae].other only Reference(Paciente)
 
 // Slice Pai
 

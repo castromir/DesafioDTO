@@ -13,7 +13,6 @@ Description: "Exemplo de instância do perfil MedicacaoPrescrita."
 * requester = Reference(ProfissionalSaudeExemplo)
 
 * medicationCodeableConcept.text = "Dipirona 500mg comprimido"
-//* medicationReference = Reference(MedicamentoDipirona)
 
 * category.coding.system = "http://desafiodto.org/CodeSystem/cs-medication-type"
 * category.coding.code = #prescricao
@@ -21,7 +20,7 @@ Description: "Exemplo de instância do perfil MedicacaoPrescrita."
 
 * status = #active
 
-* dosageInstruction[0].route.coding.system = "http://terminology.hl7.org/CodeSystem/route-codes"
+* dosageInstruction[0].route.coding.system = "http://desafiodto.org/CodeSystem/cs-via-medicacao"
 * dosageInstruction[0].route.coding.code = #oral
 * dosageInstruction[0].route.text = "oral"
 
@@ -36,9 +35,9 @@ Description: "Exemplo de instância do perfil MedicacaoPrescrita."
 
 * authoredOn = "2025-08-03T09:00:00-03:00"
 
-* extension[dataCriacao].valueDate = "2025-08-03"
+* extension[dataCriacao].valueDateTime = "2025-08-03"
 * extension[horaCriacao].valueTime = "09:00:00"
-* extension[dataAtualizacao].valueDate = "2025-08-03"
+* extension[dataAtualizacao].valueDateTime = "2025-08-03"
 * extension[horaAtualizacao].valueTime = "09:30:00"
 * extension[motivoAtualizacao].valueString = "Correção da frequência de administração"
 * extension[responsavelAlteracao].valueString = "usuario.sistema@hospital.org"

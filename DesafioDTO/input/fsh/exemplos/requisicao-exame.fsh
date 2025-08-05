@@ -1,4 +1,4 @@
-Instance: RequisicaoExemplo
+Instance: RequisicaoExameExemplo
 InstanceOf: RequisicaoExame
 Title: "Requisição de Exame - João da Silva"
 Description: "Exemplo de requisição de exame laboratorial para o paciente João da Silva."

@@ -14,7 +14,7 @@ Description: """Perfil para representar os dados de um profissional de saúde de
 
 * identifier 2..7
 
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #closed
 * identifier ^slicing.ordered = true
@@ -30,41 +30,48 @@ and rne 0..1
 
 // Slice Código do Profissional
 
+* identifier[codigo].system = "http://desafiodto.org/CodeSystem/cs-codigo-profissional"
 * identifier[codigo].value 1..1
 * identifier[codigo].value ^short = "Código do profissional registrado no Sistema de gestão da informação"
 
 // Slice CNPJ
 
+* identifier[cpf].system = "http://desafiodto.org/CodeSystem/cs-cpf"
 * identifier[cpf].value 1..1
 * identifier[cpf].value ^short = "Cadastro de Pessoa Física do profissional 
 registrado no Sistema de gestão da informação"
 
 // Slice rg
 
+* identifier[rg].system = "http://desafiodto.org/CodeSystem/cs-rg"
 * identifier[rg].value 1..1
 * identifier[rg].value ^short = "Registro Geral do profissional
  registrado no Sistema de gestão da informação"
 
 // Slice cns
 
+* identifier[cns].system = "http://desafiodto.org/CodeSystem/cs-cns"
 * identifier[cns].value 1..1
 * identifier[cns].value ^short = "CNS - Cadastro Nacional de Saúde do profissional
  registrado no Sistema de gestão da informação"
 
 // Slice cnh
 
+* identifier[cnh].system = "http://desafiodto.org/CodeSystem/cs-cnh"
 * identifier[cnh].value 1..1
 * identifier[cnh].value ^short = "CNH - Carteira Nacional de Habilitação do profissional
  registrado no Sistema de gestão da informação"
 
 // Slice cin
 
+* identifier[cin].system = "http://desafiodto.org/CodeSystem/cs-cin"
 * identifier[cin].value 1..1
 * identifier[cin].value ^short = "CIN - Carteira de Identidade Nacional do profissional
  registrado no Sistema de gestão da informação"
 
 // Slice rne
 
+* identifier[rne].system = "http://desafiodto.org/CodeSystem/cs-rne"
 * identifier[rne].value 1..1
 * identifier[rne].value ^short = "RNE - Registro Nacional de Estrangeiro do profissional
  registrado no Sistema de gestão da informação"
@@ -74,7 +81,7 @@ registrado no Sistema de gestão da informação"
 
 * qualification 3..4
 
-* qualification ^slicing.discriminator.type = #pattern
+* qualification ^slicing.discriminator.type = #value
 * qualification ^slicing.discriminator.path = "code.coding.system"
 * qualification ^slicing.rules = #closed
 * qualification ^slicing.ordered = true
@@ -89,6 +96,7 @@ and ocupacao 1..1
 // Slice conselho
 
 * qualification[conselho].code.coding.system 1..1
+* qualification[conselho].code.coding.system = "http://desafiodto.org/CodeSystem/cs-codigo-conselho"
 * qualification[conselho].code.coding.system ^short = "Código do Conselho de Classe"
 * qualification[conselho].code.coding.code 1..1
 * qualification[conselho].code.coding.code ^short = "Nº do Código do Conselho de Classe do profissional
@@ -103,6 +111,7 @@ and ocupacao 1..1
 // Slice especialidade
 
 * qualification[especialidade].code.coding.system 1..1
+* qualification[especialidade].code.coding.system = "http://desafiodto.org/CodeSystem/cs-codigo-especialidade"
 * qualification[especialidade].code.coding.system ^short = "Código da Especialidade"
 * qualification[especialidade].code.coding.code 1..1
 * qualification[especialidade].code.coding.code ^short = "Nº do código da Especialidade do profissional
@@ -111,6 +120,7 @@ and ocupacao 1..1
 // Slice subespecialidade
 
 * qualification[subespecialidade].code.coding.system 1..1
+* qualification[subespecialidade].code.coding.system = "http://desafiodto.org/CodeSystem/cs-codigo-subespecialidade"
 * qualification[subespecialidade].code.coding.system ^short = "Código da Subespecialidade"
 * qualification[subespecialidade].code.coding.code 1..1
 * qualification[subespecialidade].code.coding.code ^short = "Nº do código da Subespecialidade do profissional

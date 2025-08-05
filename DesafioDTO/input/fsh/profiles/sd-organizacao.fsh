@@ -27,8 +27,9 @@ and ans 1..1
 // Slice Código da Empresa
 
 * identifier[codigo] ^short = "Identificação pelo Código da Empresa"
-* identifier[codigo].system ^short = "O identificador da organização registrado no Sistema de gestão da informação"
 * identifier[codigo].system 1..1
+* identifier[codigo].system ^short = "O identificador da organização registrado no Sistema de gestão da informação"
+* identifier[codigo].system = "http://desafiodto.org/CodeSystem/cs-codigo-empresa"
 * identifier[codigo].value 1..1
 * identifier[codigo].value ^short = "Número do código"
 
@@ -37,6 +38,7 @@ and ans 1..1
 * identifier[cnpj] ^short = "Identificação pelo Cadastro Nacional de Pessoa Jurídica (CNPJ)"
 * identifier[cnpj].system ^short = "Cadastro Nacional de Pessoa Jurídica da organização registrado no Sistema de gestão da informação"
 * identifier[cnpj].system 1..1
+* identifier[cnpj].system = "http://desafiodto.org/CodeSystem/cs-codigo-cnpj"
 * identifier[cnpj].value 1..1
 * identifier[cnpj].value ^short = "Número do CNPJ"
 
@@ -45,6 +47,7 @@ and ans 1..1
 * identifier[cnes] ^short = "Identificação pelo Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
 * identifier[cnes].system ^short = "Identifica o estabelecimento junto ao Ministério da Saúde e órgãos competentes"
 * identifier[cnes].system 1..1
+* identifier[cnes].system = "http://desafiodto.org/CodeSystem/cs-codigo-cnes"
 * identifier[cnes].value 1..1
 * identifier[cnes].value ^short = "Número do CNES"
 
@@ -54,6 +57,7 @@ and ans 1..1
 * identifier[ans].system ^short = "Autorização concedida pela Agência Nacional de Saúde Suplementar (ANS)
  a uma operadora de planos de saúde."
 * identifier[ans].system 1..1
+* identifier[ans].system = "http://desafiodto.org/CodeSystem/cs-codigo-ans"
 * identifier[ans].value 1..1
 * identifier[ans].value ^short = "Número do Registro ANS"
 

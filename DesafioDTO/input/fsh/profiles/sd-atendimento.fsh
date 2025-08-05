@@ -22,7 +22,7 @@ Description: "Perfil FHIR do recurso Encounter para representar dados de atendim
 * subject only Reference(Paciente)
 
 // Código do Agendamento
-* appointment 1..1
+* appointment 0..1
 * appointment only Reference(Appointment)
 
 // Código da Organização
@@ -30,8 +30,8 @@ Description: "Perfil FHIR do recurso Encounter para representar dados de atendim
 * serviceProvider only Reference(Organizacao)
 
 // Código da Unidade
-* location.location 1..1
-* location.location only Reference(Location)
+//* location.location 0..1
+//* location.location only Reference(Location)
 
 // Código do Profissional
 * participant.individual 1..1
@@ -42,7 +42,7 @@ Description: "Perfil FHIR do recurso Encounter para representar dados de atendim
 * type.coding.system 1..1
 * type.coding.system ^short = "Código do Tipo de Atendimento"
 * type.coding.code 1..1
-* type.coding.code ^short = "Tipo de atendimento"
+* type.coding.code ^short = "tabela 50 TISS | Datasus +"
 
 // Modalidade/Regime de Atendimento
 * class 1..1 
