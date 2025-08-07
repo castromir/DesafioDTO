@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "HAPI FHIR - Popular Dados (Bundles)",
-    "description": "Collection para popular dados no servidor HAPI FHIR usando Bundles",
+    "description": "Collection para popular dados no servidor HAPI FHIR usando recursos",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
