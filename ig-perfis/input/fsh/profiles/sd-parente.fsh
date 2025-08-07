@@ -13,8 +13,8 @@ Description: "Perfil FHIR do recurso RelatedPerson para representar um parente o
 * identifier.value 1..1
 * identifier.value ^short = "Número do CPF da mãe, do pai ou do responsável do paciente"
 
-* patient 1..1
-* patient only Reference(Paciente)
+//* patient 1..1
+//* patient only Reference(Paciente)
 
 * relationship 1..1
 * relationship.coding.system 1..1

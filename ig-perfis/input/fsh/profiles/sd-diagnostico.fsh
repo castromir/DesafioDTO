@@ -15,23 +15,23 @@ Description: "Perfil que representa os dados de diagnóstico clínico registrado
 * code.coding.code ^short = "CID-10 | NANDA | CIAP12 +"
 
 // Código do Atendimento
-* encounter 1..1
-* encounter only Reference(Atendimento)
-* encounter ^short = "Referência ao atendimento"
+//* encounter 1..1
+//* encounter only Reference(Atendimento)
+//* encounter ^short = "Referência ao atendimento"
 
 // Código do Paciente
-* subject 1..1
-* subject only Reference(Paciente)
-* subject ^short = "Referência ao paciente diagnosticado"
+//* subject 1..1
+//* subject only Reference(Paciente)
+//* subject ^short = "Referência ao paciente diagnosticado"
 
 // Classificação do Diagnóstico
 * clinicalStatus 1..1
 * clinicalStatus ^short = "inicial | principal | secundário | crônico | outro"
 
 // Profissional do Registro
-* asserter 1..1
-* asserter only Reference(ProfissionalSaude)
-* asserter ^short = "Profissional de saúde que registrou o diagnóstico"
+//* asserter 1..1
+//* asserter only Reference(ProfissionalSaude)
+//* asserter ^short = "Profissional de saúde que registrou o diagnóstico"
 
 // Data e Hora do Registro 
 * recordedDate 1..1

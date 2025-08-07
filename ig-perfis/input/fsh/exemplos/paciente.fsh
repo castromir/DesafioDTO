@@ -27,11 +27,6 @@ Description: "Exemplo de instância do perfil Paciente representando João da Si
 * gender = #male
 * birthDate = "1985-03-20"
 
-// Vínculos familiares
-* link[mae].id = "mae"
-* link[mae].other = Reference(PacienteExemplo)
-* link[mae].type = #refer
-
 // Endereço
 * address.line[moradia] = "Casa térrea"
 * address.line[codigomunicipio] = "3550308"

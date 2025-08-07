@@ -19,10 +19,10 @@ Description: "Exemplo de requisição de exame laboratorial para o paciente Joã
 * subject = Reference(PacienteExemplo)
 
 // Atendimento
-* encounter = Reference(AtendimentoExemplo)
+//* encounter = Reference(AtendimentoExemplo)
 
 // Profissional solicitante
-* requester = Reference(ProfissionalSaudeExemplo)
+//* requester = Reference(ProfissionalSaudeExemplo)
 
 // Tipo de requisição
 * priority = #routine

@@ -122,36 +122,6 @@ and dnv 0..1
 * birthDate 0..1
 * birthDate ^short = "Data de Nascimento registrado oficialmente para o paciente."
 
-* link 1..3
-* link ^slicing.discriminator.type = #value
-* link ^slicing.discriminator.path = "id"
-* link ^slicing.rules = #closed
-
-* link contains mae 1..1
-and pai 0..1
-and responsavel 0..1
-
-// Slice Mãe
-
-* link[mae].id 1..1
-* link[mae].id = "mae"
-* link[mae].other 1..1
-* link[mae].other only Reference(Paciente)
-
-// Slice Pai
-
-* link[pai].id 1..1
-* link[pai].id = "pai"
-* link[pai].other 1..1
-* link[pai].other only Reference(Parente)
-
-// Slice Responsavel
-
-* link[responsavel].id 1..1
-* link[responsavel].id = "responsavel"
-* link[responsavel].other 1..1
-* link[responsavel].other only Reference(Parente)
-
 // Endereço
 
 * address 0..1

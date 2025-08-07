@@ -6,9 +6,9 @@ Description: "Exemplo de instância para o perfil Resultado de Exame conforme o 
 
 * code = #10346-5
 
-* basedOn = Reference(RequisicaoExameExemplo)
-* subject = Reference(PacienteExemplo)
-* encounter = Reference(AtendimentoExemplo)
+//* basedOn = Reference(RequisicaoExameExemplo)
+//* subject = Reference(PacienteExemplo)
+//* encounter = Reference(AtendimentoExemplo)
 
 * status = #final
 

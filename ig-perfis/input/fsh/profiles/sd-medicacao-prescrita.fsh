@@ -18,14 +18,14 @@ Description: "Perfil para representar uma prescrição de medicamento."
 * intent 1..1
 
 // Codigo do atendimento
-* encounter 1..1
-* encounter only Reference(Encounter)
-* encounter ^short = "Atendimento para a prescrição"
+//* encounter 1..1
+//* encounter only Reference(Encounter)
+//* encounter ^short = "Atendimento para a prescrição"
 
 // Codigo do profissional
-* requester 1..1
-* requester only Reference(ProfissionalSaude)
-* requester ^short = "Profissional de Saúde responsável pela prescrição ao paciente"
+//* requester 1..1
+//* requester only Reference(ProfissionalSaude)
+//* requester ^short = "Profissional de Saúde responsável pela prescrição ao paciente"
 
 * medicationCodeableConcept 1..1
 * medicationCodeableConcept.text 1..1

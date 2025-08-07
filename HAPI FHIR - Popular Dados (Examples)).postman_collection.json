@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "20c952b1-dda3-402f-b1bc-2670b3e89310",
+		"name": "HAPI FHIR - Popular Dados (Examples))",
+		"description": "Collection para popular dados no servidor HAPI FHIR usando Bundles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39990156"
+	},
+	"item": [
+		{
+			"name": "1. Testar Conexão",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fhir/metadata",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir",
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Criar Paciente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Patient\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/paciente\"]\n        },\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"text\": \"João da Silva\"\n          },\n          {\n            \"use\": \"usual\",\n            \"text\": \"Joãozinho\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-paciente\",\n            \"value\": \"PAC12345\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-prontuario\",\n            \"value\": \"PRONT98765\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cpf\",\n            \"value\": \"123.456.789-00\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cns\",\n            \"value\": \"898001160313569\"\n          }\n        ],\n        \"gender\": \"male\",\n        \"birthDate\": \"1985-03-20\",\n        \"address\": [\n          {\n            \"line\": [\n              \"Casa térrea\",\n              \"3550308\",\n              \"Rua das Palmeiras\",\n              \"456\",\n              \"Casa dos fundos\"\n            ],\n            \"city\": \"São Paulo\",\n            \"district\": \"Jardim das Flores\",\n            \"state\": \"SP\",\n            \"country\": \"BR\",\n            \"postalCode\": \"01234-567\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"system\": \"http://desafiodto.org/CodeSystem/cs-estado-civil\",\n              \"code\": \"M\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-identidade-genero\",\n            \"valueCode\": \"200\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-criacao\",\n            \"valueDateTime\": \"2025-08-01\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-status\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"ativo\"\n                }\n              ]\n            }\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-bloqueado\",\n            \"valueBoolean\": false\n          }\n        ]\n      }\n    },\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Patient\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/paciente\"]\n        },\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"text\": \"Maria Santos\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-paciente\",\n            \"value\": \"PAC67890\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-prontuario\",\n            \"value\": \"PRONT54321\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cpf\",\n            \"value\": \"987.654.321-00\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cns\",\n            \"value\": \"898001160313570\"\n          }\n        ],\n        \"gender\": \"female\",\n        \"birthDate\": \"1990-07-22\",\n        \"address\": [\n          {\n            \"line\": [\n              \"Apartamento\",\n              \"3550308\",\n              \"Av. Paulista\",\n              \"456\",\n              \"Apto 123\"\n            ],\n            \"city\": \"São Paulo\",\n            \"district\": \"Bela Vista\",\n            \"state\": \"SP\",\n            \"country\": \"BR\",\n            \"postalCode\": \"01310-100\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"system\": \"http://desafiodto.org/CodeSystem/cs-estado-civil\",\n              \"code\": \"S\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-identidade-genero\",\n            \"valueCode\": \"100\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-criacao\",\n            \"valueDateTime\": \"2025-08-01\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-status\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"ativo\"\n                }\n              ]\n            }\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-bloqueado\",\n            \"valueBoolean\": false\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Criar Atendimento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Patient\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/paciente\"]\n        },\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"text\": \"João da Silva\"\n          },\n          {\n            \"use\": \"usual\",\n            \"text\": \"Joãozinho\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-paciente\",\n            \"value\": \"PAC12345\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-prontuario\",\n            \"value\": \"PRONT98765\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cpf\",\n            \"value\": \"123.456.789-00\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cns\",\n            \"value\": \"898001160313569\"\n          }\n        ],\n        \"gender\": \"male\",\n        \"birthDate\": \"1985-03-20\",\n        \"address\": [\n          {\n            \"line\": [\n              \"Casa térrea\",\n              \"3550308\",\n              \"Rua das Palmeiras\",\n              \"456\",\n              \"Casa dos fundos\"\n            ],\n            \"city\": \"São Paulo\",\n            \"district\": \"Jardim das Flores\",\n            \"state\": \"SP\",\n            \"country\": \"BR\",\n            \"postalCode\": \"01234-567\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"system\": \"http://desafiodto.org/CodeSystem/cs-estado-civil\",\n              \"code\": \"M\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-identidade-genero\",\n            \"valueCode\": \"200\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-criacao\",\n            \"valueDateTime\": \"2025-08-01\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-status\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"ativo\"\n                }\n              ]\n            }\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-bloqueado\",\n            \"valueBoolean\": false\n          }\n        ]\n      }\n    },\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Patient\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/paciente\"]\n        },\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"text\": \"Maria Santos\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-paciente\",\n            \"value\": \"PAC67890\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-codigo-prontuario\",\n            \"value\": \"PRONT54321\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cpf\",\n            \"value\": \"987.654.321-00\"\n          },\n          {\n            \"system\": \"http://desafiodto.org/CodeSystem/cs-cns\",\n            \"value\": \"898001160313570\"\n          }\n        ],\n        \"gender\": \"female\",\n        \"birthDate\": \"1990-07-22\",\n        \"address\": [\n          {\n            \"line\": [\n              \"Apartamento\",\n              \"3550308\",\n              \"Av. Paulista\",\n              \"456\",\n              \"Apto 123\"\n            ],\n            \"city\": \"São Paulo\",\n            \"district\": \"Bela Vista\",\n            \"state\": \"SP\",\n            \"country\": \"BR\",\n            \"postalCode\": \"01310-100\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"system\": \"http://desafiodto.org/CodeSystem/cs-estado-civil\",\n              \"code\": \"S\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-identidade-genero\",\n            \"valueCode\": \"100\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-criacao\",\n            \"valueDateTime\": \"2025-08-01\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-status\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"ativo\"\n                }\n              ]\n            }\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-bloqueado\",\n            \"valueBoolean\": false\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Criar Diagnostico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Criar Exame",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Criar Prescricao Medicacao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Criar Organizacao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Criar Profissional Saude",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Criar Requisicao Exame",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/fhir+json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\n      \"request\": {\n        \"method\": \"POST\",\n        \"url\": \"Observation\"\n      },\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"meta\": {\n          \"profile\": [\"http://desafiodto.org/StructureDefinition/resultado-exame-observation\"]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"10346-5\"\n            }\n          ]\n        },\n        \"basedOn\": [\n          {\n            \"reference\": \"ServiceRequest/REQ123\"\n          }\n        ],\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"encounter\": {\n          \"reference\": \"Encounter/ENC123\"\n        },\n        \"status\": \"final\",\n        \"performer\": [\n          {\n            \"id\": \"liberacao\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"LIB123\"\n            },\n            \"reference\": \"Practitioner/PROF123\"\n          },\n          {\n            \"id\": \"registro\",\n            \"identifier\": {\n              \"system\": \"http://desafiodto.org/sid/profissional\",\n              \"value\": \"REG456\"\n            },\n            \"reference\": \"Practitioner/PROF456\"\n          }\n        ],\n        \"effectiveDateTime\": \"2025-07-30T08:45:00-03:00\",\n        \"issued\": \"2025-07-30T16:30:00-03:00\",\n        \"valueString\": \"Exame dentro dos parâmetros esperados. Não foram detectadas alterações.\",\n        \"component\": [\n          {\n            \"code\": {\n              \"text\": \"Hemoglobina\"\n            },\n            \"valueQuantity\": {\n              \"value\": 13.5,\n              \"unit\": \"g/dL\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"12.0 - 16.0 g/dL\"\n              }\n            ]\n          },\n          {\n            \"code\": {\n              \"text\": \"Leucócitos\"\n            },\n            \"valueQuantity\": {\n              \"value\": 7300,\n              \"unit\": \"células/mm³\"\n            },\n            \"referenceRange\": [\n              {\n                \"text\": \"4000 - 11000 células/mm³\"\n              }\n            ]\n          }\n        ],\n        \"interpretation\": [\n          {\n            \"text\": \"Parâmetros laboratoriais dentro da normalidade.\"\n          }\n        ],\n        \"extension\": [\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-data-atualizacao\",\n            \"valueDateTime\": \"2025-08-03T11:00:00-03:00\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-motivo-atualizacao\",\n            \"valueString\": \"Correção do valor de hemoglobina após revisão técnica.\"\n          },\n          {\n            \"url\": \"http://desafiodto.org/StructureDefinition/extensao-responsavel-alteracao\",\n            \"valueString\": \"Sistema Central de Resultados\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/fhir",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Verificar Todos os Patients",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fhir/Patient",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir",
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Verificar Todas as Observations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fhir/Observation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir",
+						"Observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Buscar Patient Específico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/fhir+json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fhir/Patient/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fhir",
+						"Patient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

@@ -10,19 +10,19 @@ Description: "Perfil baseado em Observation que representa os resultados de exam
 
 // Código, Tipo e Descrição do Exame
 // Grande parte das informações para o Exame, como categoria, notas e outras, estão já no ServiceRequest
-* basedOn 1..1
-* basedOn only Reference(RequisicaoExame)
-* basedOn ^short = "Identificador do tipo de exame"
+//* basedOn 1..1
+//* basedOn only Reference(RequisicaoExame)
+//* basedOn ^short = "Identificador do tipo de exame"
 
 // Código do Paciente
-* subject 1..1
-* subject only Reference(Paciente)
-* subject ^short = "Identificador único do paciente"
+//* subject 1..1
+//* subject only Reference(Paciente)
+//* subject ^short = "Identificador único do paciente"
 
 // Código do Atendimento
-* encounter 1..1
-* encounter only Reference(Atendimento)
-* encounter ^short = "Identificador do atendimento"
+//* encounter 1..1
+//* encounter only Reference(Atendimento)
+//* encounter ^short = "Identificador do atendimento"
 
 // Status do Exame
 * status 1..1
@@ -44,12 +44,12 @@ Description: "Perfil baseado em Observation que representa os resultados de exam
 and registro 1..1
 
 * performer[liberacao].id = "liberacao"
-* performer[liberacao] only Reference(Practitioner)
+//* performer[liberacao] only Reference(Practitioner)
 * performer[liberacao] ^short = "Profissional Responsável pela liberação do exame."
 * performer[liberacao] ^definition = "Identificação unívoca do profissional de saúde responsável pelo liberação do exame laboratorial."
 
 * performer[registro].id = "registro"
-* performer[registro] only Reference(Practitioner)
+//* performer[registro] only Reference(Practitioner)
 * performer[registro] ^short = "Profissional Responsável pelo registro do exame."
 * performer[registro] ^definition = "Identificação unívoca do profissional de saúde responsável pelo registro do exame laboratorial."
 

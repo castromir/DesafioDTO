@@ -14,28 +14,28 @@ Description: "Perfil FHIR do recurso Encounter para representar dados de atendim
 * identifier.value ^short = "Número de controle do atendimento no estabelecimento"
 
 // Nº Conta (Faturamento)
-* account 0..1
-* account only Reference(Account)
+//* account 0..1
+//* account only Reference(Account)
 
 // Código do Paciente
-* subject 1..1
-* subject only Reference(Paciente)
+//* subject 1..1
+//* subject only Reference(Paciente)
 
 // Código do Agendamento
-* appointment 0..1
-* appointment only Reference(Appointment)
+//* appointment 0..1
+//* appointment only Reference(Appointment)
 
 // Código da Organização
-* serviceProvider 1..1
-* serviceProvider only Reference(Organizacao)
+//* serviceProvider 1..1
+//* serviceProvider only Reference(Organizacao)
 
 // Código da Unidade
 //* location.location 0..1
 //* location.location only Reference(Location)
 
 // Código do Profissional
-* participant.individual 1..1
-* participant.individual only Reference(ProfissionalSaude)
+//* participant.individual 1..1
+//* participant.individual only Reference(ProfissionalSaude)
 
 // Tipo de Atendimento
 * type 0..1

@@ -9,10 +9,8 @@ Description: "Exemplo de instância do perfil de Diagnóstico clínico conforme 
 * code.text = "Diabetes mellitus tipo 2"
 * code.coding[0].code = #E11
 
-* encounter = Reference(AtendimentoExemplo)
 * subject = Reference(PacienteExemplo)
 
-* asserter = Reference(ProfissionalSaudeExemplo)
 * recordedDate = "2024-07-12T14:30:00-03:00"
 
 * clinicalStatus.coding.system = "http://terminology.hl7.org/CodeSystem/condition-clinical"

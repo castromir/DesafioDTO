@@ -16,19 +16,19 @@ Description: "Perfil baseado em ServiceRequest que representa a requisição de 
 * code.coding.code ^short = "TUSS | SIGTAP +"
 
 // Código do Paciente
-* subject 1..1
-* subject only Reference(Paciente)
-* subject ^short = "Código único do paciente definido no projeto (ex: CPF, prontuário)"
+//* subject 1..1
+//* subject only Reference(Paciente)
+//* subject ^short = "Código único do paciente definido no projeto (ex: CPF, prontuário)"
 
 // Código do Atendimento
-* encounter 1..1
-* encounter only Reference(Atendimento)
-* encounter ^short = "Código do atendimento associado à requisição do exame"
+//* encounter 1..1
+//* encounter only Reference(Atendimento)
+//* encounter ^short = "Código do atendimento associado à requisição do exame"
 
 // Código Profissional do Registro 
-* requester 1..1
-* requester only Reference(ProfissionalSaude)
-* requester ^short = "Profissional responsável pela requisição"
+//* requester 1..1
+//* requester only Reference(ProfissionalSaude)
+//* requester ^short = "Profissional responsável pela requisição"
 
 // Tipo de Requisição
 * priority 0..1

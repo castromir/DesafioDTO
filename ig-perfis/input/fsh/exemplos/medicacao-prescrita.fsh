@@ -9,8 +9,8 @@ Description: "Exemplo de instância do perfil MedicacaoPrescrita."
 * intent = #original-order
 
 * subject = Reference(PacienteExemplo)
-* encounter = Reference(AtendimentoExemplo)
-* requester = Reference(ProfissionalSaudeExemplo)
+//* encounter = Reference(AtendimentoExemplo)
+//* requester = Reference(ProfissionalSaudeExemplo)
 
 * medicationCodeableConcept.text = "Dipirona 500mg comprimido"
 

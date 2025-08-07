@@ -104,7 +104,7 @@ and ocupacao 1..1
 * qualification[conselho].code.text 1..1
 * qualification[conselho].code.text ^short = "CRM | COREN | CRN | outro +"
 * qualification[conselho].issuer 1..1
-* qualification[conselho].issuer only Reference(Organizacao)
+//* qualification[conselho].issuer only Reference(Organizacao)
 * qualification[conselho].issuer ^short = "Organização Institucional registrada ao conselho do profissional
  registrado no Sistema de gestão da informação"
 

@@ -6,12 +6,6 @@ Description: "Exemplo de instância do perfil de Atendimento da DTO."
 * identifier.system = "http://desafiodto.org/CodeSystem/cs-numero-atendimento"
 * identifier.value = "ATD-20250803-001"
 
-* account = Reference(AccountExemplo)
-
-* subject = Reference(PacienteExemplo)
-* serviceProvider = Reference(OrganizacaoExemplo)
-* participant[0].individual = Reference(ProfissionalSaudeExemplo)
-
 * type.coding.system = "http://desafiodto.org/CodeSystem/cs-codigo-atendimento"
 * type.coding.code = #Datasus
 

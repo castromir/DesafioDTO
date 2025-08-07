@@ -4,7 +4,7 @@
 
 ```powershell
 # 1. Iniciar o servidor
-docker-compose up -d
+docker run -p 8080:8080 hapiproject/hapi:latest
 
 # 2. Aguardar o servidor inicializar (20-30 segundos)
 Start-Sleep -Seconds 30
