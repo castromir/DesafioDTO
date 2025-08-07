@@ -9,9 +9,7 @@ Description: "Exemplo de instância do perfil de Atendimento da DTO."
 * account = Reference(AccountExemplo)
 
 * subject = Reference(PacienteExemplo)
-//* appointment = Reference("AppointmentExemplo")
 * serviceProvider = Reference(OrganizacaoExemplo)
-//* location.location = Reference("LocationExemplo")
 * participant[0].individual = Reference(ProfissionalSaudeExemplo)
 
 * type.coding.system = "http://desafiodto.org/CodeSystem/cs-codigo-atendimento"
